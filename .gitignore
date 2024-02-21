@@ -486,3 +486,9 @@ API/main_schema.db
 API/main_schema.db-shm
 API/main_schema.db-wal
 API/appsettings.json
+src/API/main_schema.db
+src/API/main_schema.db-shm
+src/API/main_schema.db-wal
+src/API/main_schema.db
+src/API/main_schema.db-shm
+src/API/main_schema.db-wal

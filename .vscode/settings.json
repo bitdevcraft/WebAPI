@@ -4,9 +4,9 @@
     {
       "previewLimit": 50,
       "driver": "SQLite",
-      "name": "MainSchema",
-      "group": "Template",
-      "database": "${workspaceFolder:WebAPI}/API/main_schema.db"
+      "database": "${workspaceFolder:WebAPI}/src/API/main_schema.db",
+      "name": "Main",
+      "group": "Template"
     }
   ]
 }
