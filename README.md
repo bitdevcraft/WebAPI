@@ -1,5 +1,9 @@
 This will be use as a webapi template using a clean architecture.
 
+# Requirement
+
+- .Net 8
+
 # Dotnet EF
 
 Installation
@@ -14,6 +18,8 @@ Creation of the Migrations
 
 - Microsoft.AspNetCore.OpenApi
 - Microsoft.EntityFrameworkCore.Design
+<!-- For ASP.Net Identity -->
+- Microsoft.AspNetCore.Authentication.JwtBearer
 
 ## Application
 
@@ -27,7 +33,9 @@ Creation of the Migrations
 
 ## Domain
 
-- None
+<!-- For ASP.Net Identity -->
+
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 ## Debugging
 

@@ -1,19 +1,22 @@
 using Application.Models;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     public class ModelController : BaseApiController
     {
+        [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult<List<Model>>> GetListModel()
+        public async Task<IActionResult> GetListModel()
         {
             return HandleResult(await Mediator.Send(new List.Query()));
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<ActionResult<Model>> GetModel(Guid id)
+        public async Task<IActionResult> GetModel(Guid id)
         {
             return HandleResult(await Mediator.Send(new Details.Query { Id = id }));
         }
