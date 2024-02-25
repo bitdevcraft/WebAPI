@@ -37,6 +37,11 @@ Creation of the Migrations
 
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
+# Test
+
+- Microsoft.EntityFrameworkCore.InMemory
+- Moq
+
 ## Debugging
 
 Watch the API
