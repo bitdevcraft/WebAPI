@@ -10,5 +10,6 @@ namespace Persistence
             : base(options) { }
 
         public DbSet<Model> Models { get; set; }
+        public DbSet<AppCompany> AppCompanies { get; set;}
     }
 }

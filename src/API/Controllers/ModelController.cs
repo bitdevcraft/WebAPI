@@ -27,6 +27,7 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new Create.Command { Model = model }));
         }
 
+        [AllowAnonymous]
         [HttpPut("{id}")]
         public async Task<IActionResult> EditModel(Guid id, Model model)
         {
