@@ -1,9 +1,9 @@
-export interface CompanyDetails {
+export interface AppCompany {
   logo: string;
   name: string;
   email: string;
-  mobileNo: number;
-  hotline: number;
+  mobileNo: string;
+  hotline: string;
   about: string;
   vision: string;
   mission: string;

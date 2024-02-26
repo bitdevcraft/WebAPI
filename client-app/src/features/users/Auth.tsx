@@ -5,10 +5,10 @@ import { Outlet } from "react-router-dom";
 function AuthMain() {
   return (
     <>
-      <Flex justify="center" className="pt-14">
+      <Flex justify="center" className="pt-32">
         <Brand />
       </Flex>
-      <Flex justify="center" className="w-full">
+      <Flex justify="center" align="center" className="w-full">
         <Outlet />
       </Flex>
     </>

@@ -1,5 +1,27 @@
 import { Button, Flex, Input } from "antd";
-import { Brand } from "../company";
+import * as yup from "yup";
+
+const schema = yup
+  .object({
+    email: yup
+      .string()
+      .required()
+      .matches(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/, "Invalid Email"),
+    password: yup
+      .string()
+      .required("Password is Required")
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+        "Password must contain at least 8 characters, including one number, one lowercase and one uppercase letter"
+      ),
+    confirm_password: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords do not match"),
+    firstName: yup.string(),
+    lastName: yup.string(),
+    username: yup.string(),
+  })
+  .required();
 
 function RegisterForm() {
   return (

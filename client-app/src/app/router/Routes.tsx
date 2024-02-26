@@ -5,6 +5,9 @@ import LoadingApp from "../layout/LoadingApp";
 //  Features
 import * as Features from "../../features";
 
+// Errors
+import * as Errors from "../../features/error";
+
 export const routes: RouteObject[] = [
   {
     path: "/",
@@ -27,6 +30,12 @@ export const routes: RouteObject[] = [
           },
         ],
       },
+
+      // Error 
+      
+      { path: "*", element: <Errors.PageNotFound /> },
+      { path: "not-authorized", element: <Errors.NotAuthorized /> },
+      { path: "internal-error", element: <Errors.InternalError /> },
     ],
   },
 ];
