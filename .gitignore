@@ -492,3 +492,4 @@ src/API/main_schema.db-wal
 src/API/main_schema.db
 src/API/main_schema.db-shm
 src/API/main_schema.db-wal
+src/API/wwwroot/Files/Images/*

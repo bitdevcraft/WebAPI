@@ -7,10 +7,14 @@ import { router } from "./app/router/Routes.tsx";
 
 import { StoreContext, store } from "./app/store/store.ts";
 
+import { NextUIProvider } from "@nextui-org/react";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <StoreContext.Provider value={store}>
-      <RouterProvider router={router} />
+      <NextUIProvider>
+        <RouterProvider router={router} />
+      </NextUIProvider>
     </StoreContext.Provider>
   </React.StrictMode>
 );

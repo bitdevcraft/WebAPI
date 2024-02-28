@@ -86,6 +86,6 @@ const AppCompanies = {
     requests.put<AppCompany>(`/appcompany`, company),
 };
 
-const agent = { AppCompanies };
+const agent = { AppCompanies, Account };
 
 export default agent;

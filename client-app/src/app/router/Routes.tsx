@@ -8,6 +8,9 @@ import * as Features from "../../features";
 // Errors
 import * as Errors from "../../features/error";
 
+// Admin
+import * as Admin from "../../features/admin";
+
 export const routes: RouteObject[] = [
   {
     path: "/",
@@ -31,11 +34,26 @@ export const routes: RouteObject[] = [
         ],
       },
 
-      // Error 
-      
+      // Error
+
       { path: "*", element: <Errors.PageNotFound /> },
       { path: "not-authorized", element: <Errors.NotAuthorized /> },
       { path: "internal-error", element: <Errors.InternalError /> },
+
+      // Admin
+      // - Company Profile
+
+      {
+        path: "admin/",
+        element: <Admin.Main />,
+        children: [
+          { path: "companyprofile", element: <Admin.CompanyProfileView /> },
+          {
+            path: "companyprofile-edit",
+            element: <Admin.CompanyProfileEdit />,
+          },
+        ],
+      },
     ],
   },
 ];

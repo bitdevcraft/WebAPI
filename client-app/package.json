@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nextui-org/navbar": "^2.0.27",
+    "@nextui-org/react": "^2.2.9",
+    "@nextui-org/skeleton": "^2.0.24",
     "antd": "^5.14.1",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
