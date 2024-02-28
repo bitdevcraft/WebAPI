@@ -1,13 +1,21 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../app/store/store";
 
-function Logo() {
+interface Props {
+  className?: string;
+}
+
+function Logo(props: Props) {
   const { appCompanyStore } = useStore();
-  const logo = { __html: appCompanyStore.company?.logo ?? "" };
+  const logo = (appCompanyStore.company?.logo ?? "").replace(" ", "%20");
   return (
     <>
       {logo ? (
-        <div dangerouslySetInnerHTML={logo}></div>
+        <img
+          src={`${import.meta.env.VITE_DEFAULT_URL}${logo}`}
+          alt=""
+          {...props}
+        />
       ) : (
         <img src={`/public/assets/react.svg`} alt="" />
       )}

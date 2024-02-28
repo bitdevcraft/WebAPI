@@ -6,7 +6,7 @@ function Brand() {
   const { appCompanyStore } = useStore();
   return (
     <Flex align="center" gap={10} className="">
-      <Logo />
+      <Logo className="w-[60px]" />
       <p className="font-bold text-3xl">
         {appCompanyStore.company?.name ?? "Default Company"}
       </p>

@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom";
-import Footer from "./footer/Footer";
+import { Outlet, useLocation } from "react-router-dom";
+import AppFooter from "./footer/Footer";
 import { useStore } from "../store/store";
 import { useEffect } from "react";
 import LoadingApp from "./LoadingApp";
 import { observer } from "mobx-react-lite";
+import AppNavBar from "./navbar/Navbar";
 
 function App() {
   const { appCompanyStore } = useStore();
@@ -16,13 +17,16 @@ function App() {
 
   if (!appCompanyStore.companyLoaded) return <LoadingApp />;
 
+  const location = useLocation();
+
   return (
     <div className="min-h-[100vh] relative">
-      <div className="max-w-[1280px] mx-auto">
+      {location.pathname.startsWith("/auth/") ? null : <AppNavBar />}
+      <div className="max-w-[1280px] min-w-[375px] mx-auto">
         <Outlet />
       </div>
       <div className="absolute bottom-0 w-full">
-        <Footer />
+        <AppFooter />
       </div>
     </div>
   );
