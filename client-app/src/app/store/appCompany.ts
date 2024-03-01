@@ -2,6 +2,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import { AppCompany } from "../models";
 import agent from "../api/agent";
 import { clearPersistedStore, makePersistable } from "mobx-persist-store";
+import { router } from "../router/Routes";
 
 export default class AppCompanyStore {
   company: AppCompany | null = null;
@@ -31,6 +32,19 @@ export default class AppCompanyStore {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  updateCompanyDetail = async (company: AppCompany) => {
+    try {
+      const result = await agent.AppCompanies.edit(company);
+      await clearPersistedStore(this);
+      runInAction(() => {
+        if (result) {
+          this.company = result;
+        }
+      });
+      router.navigate("/admin/companyprofile");
+    } catch (error) {}
   };
 
   setCompanyLoaded = () => {

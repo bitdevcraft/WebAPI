@@ -1,4 +1,4 @@
-import { Descriptions, DescriptionsProps } from "antd";
+import { Button, Descriptions, DescriptionsProps } from "antd";
 import { useStore } from "../../../app/store/store";
 import { CompanyInfo } from "../../../app/models/company";
 
@@ -32,8 +32,20 @@ function CompanyProfileView() {
       items={items}
       layout="vertical"
       bordered
-      labelStyle={{ textAlign: "center" }}
+      labelStyle={{
+        fontWeight: "700",
+        fontSize: "14px",
+      }}
       className="pb-32 px-4"
+      extra={
+        <Button
+          type="primary"
+          className="bg-blue-400"
+          href="/admin/companyprofile-edit"
+        >
+          Edit
+        </Button>
+      }
     />
   );
 }

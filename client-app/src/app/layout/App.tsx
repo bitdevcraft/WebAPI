@@ -21,12 +21,15 @@ function App() {
 
   return (
     <div className="min-h-[100vh] relative">
-      {location.pathname.startsWith("/auth/") ? null : <AppNavBar />}
+      {location.pathname.startsWith("/auth/") ||
+      location.pathname.startsWith("/test") ? null : (
+        <AppNavBar />
+      )}
       <div className="max-w-[1280px] min-w-[375px] mx-auto">
         <Outlet />
       </div>
       <div className="absolute bottom-0 w-full">
-        <AppFooter />
+        {location.pathname.startsWith("/test") ? null : <AppFooter />}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import App from "../layout/App";
-import LoadingApp from "../layout/LoadingApp";
 
 //  Features
 import * as Features from "../../features";
@@ -10,6 +9,7 @@ import * as Errors from "../../features/error";
 
 // Admin
 import * as Admin from "../../features/admin";
+import ContentBody from "../layout/content/Content";
 
 export const routes: RouteObject[] = [
   {
@@ -17,7 +17,7 @@ export const routes: RouteObject[] = [
     element: <App />,
     children: [
       // For Development
-      { path: "loading", element: <LoadingApp /> },
+      { path: "test", element: <ContentBody /> },
 
       // For Normal Use-Case
       /** User */

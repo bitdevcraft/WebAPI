@@ -1,4 +1,5 @@
 export interface AppCompany {
+  id?: string;
   logo: string;
   name: string;
   email: string;
@@ -24,6 +25,7 @@ export class CompanyInfo {
 
   constructor(company?: CompanyInfo) {
     if (company) {
+      this.id = company.id;
       this.logo = company.logo;
       this.name = company.name;
       this.email = company.email;
